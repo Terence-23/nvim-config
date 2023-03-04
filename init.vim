@@ -1,9 +1,19 @@
+"plugin config
 call plug#begin()
 
-Plug 'prabirshrestha/vim-lsp'
+ Plug 'prabirshrestha/vim-lsp'
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'lighttiger2505/deoplete-vim-lsp'
+ Plug 'Shougo/deoplete.nvim'
+ Plug 'lighttiger2505/deoplete-vim-lsp'
+
+ Plug 'dracula/vim'
+ Plug 'ryanoasis/vim-devicons'
+ Plug 'SirVer/ultisnips'
+ Plug 'honza/vim-snippets'
+ Plug 'scrooloose/nerdtree'
+ Plug 'preservim/nerdcommenter'
+ Plug 'mhinz/vim-startify'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -22,4 +32,36 @@ if executable('ccls')
       \ })
 endif
 
-set nu
+
+filetype plugin indent on
+filetype plugin on
+syntax on
+
+" key remaps
+
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+
+" set
+set number 
+set noswapfile 
+set hlsearch 
+set ignorecase 
+set incsearch
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set wildmode=longest,list
+set clipboard=unnamedplus
+
+
+"coc.nvim settings
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
+
+source $HOME/.config/nvim/custom/coc.vim
+
