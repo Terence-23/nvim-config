@@ -32,18 +32,22 @@ if executable('ccls')
       \ })
 endif
 
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 
 filetype plugin indent on
 filetype plugin on
 syntax on
 
 " key remaps
-
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
+"inoremap <C-c> <plug>NERDCommenterInsert
+ 
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+"inoremap { {}<Left>
+"inoremap " ""<Left>
+"inoremap ' ''<Left>
 
 " set
 set number 
@@ -58,6 +62,8 @@ set tabstop=4
 set wildmode=longest,list
 set clipboard=unnamedplus
 
+" parentheses
+source $HOME/.config/nvim/custom/parentheses.vim
 
 "coc.nvim settings
 let g:loaded_ruby_provider = 0
