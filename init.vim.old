@@ -1,0 +1,47 @@
+"plugin config
+call plug#begin()
+
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'mbbill/undotree'
+    Plug 'williamboman/mason.nvim'
+
+
+call plug#end()
+
+filetype plugin on
+syntax on
+
+" key remaps
+"inoremap <C-c> <plug>NERDCommenterInsert
+ 
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+"inoremap { {}<Left>
+"inoremap " ""<Left>
+"inoremap ' ''<Left>
+
+nnoremap U :UndotreeToggle<Return>
+
+" set
+""set number
+set relativenumber 
+set noswapfile 
+set hlsearch 
+set ignorecase 
+set incsearch
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set wildmode=longest,list
+set clipboard=unnamedplus
+
+" parentheses
+source $HOME/.config/nvim/custom/parentheses.vim
+
+"coc.nvim settings
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
+
+source $HOME/.config/nvim/custom/coc.vim
+

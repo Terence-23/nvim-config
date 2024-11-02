@@ -1,4 +1,15 @@
 {
     rust-analyzer.enable
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd"
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
+    {
+      "languageserver": {
+        "go": {
+          "command": "gopls",
+          "rootPatterns": ["go.mod"],
+          "trace.server": "verbose",
+          "filetypes": ["go"]
+        }
+      }
+    }
+
 }
